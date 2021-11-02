@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SimpleCalculator</string>
+    <string name="welcome_msg">Hello YWCA Program</string>
+    <string name="title">Simple Calculator</string>
+    <string name="plus_sign">+</string>
+    <string name="minuse_sign">-</string>
+    <string name="times_sign">*</string>
+    <string name="divid_sign">/</string>
+    <string name="enter_number_2">Enter Number 2</string>
+    <string name="enter_number_1">Enter Number 1</string>
+</resources>
