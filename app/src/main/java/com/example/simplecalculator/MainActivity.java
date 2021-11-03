@@ -42,44 +42,55 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ((firstNum.getText().toString().isEmpty()) || (secondNum.getText().toString().isEmpty())){
-                    Toast.makeText(getApplicationContext(),"Please Enter Numbers first",Toast.LENGTH_LONG).show();
-
-                }
-                else{
-                    int n1 = Integer.parseInt(firstNum.getText().toString());
-                    int n2 = Integer.parseInt(secondNum.getText().toString());
-                    int result = n1 + n2;
-                    resultText.setText(result + "");
-                }
-
+                checkAndCalc(1);
             }
         });
 
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Sub button clicked",Toast.LENGTH_LONG).show();
-                Log.d("Calculator","Sub Button Clicked");
+                checkAndCalc(2);
             }
         });
 
         times.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("Calculator","times Button Clicked");
+                checkAndCalc(3);
             }
         });
         divid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Divide button clicked",Toast.LENGTH_LONG).show();
-                Log.d("Calculator","divide Button Clicked");
+                checkAndCalc(4);
             }
         });
     }
 
+    void checkAndCalc(int op){// (1,+) (2,-)(3,*)(4,/)
+        String num1Str = firstNum.getText().toString();// I am sure it contain a numer
+        String num2Str = secondNum.getText().toString();
+        if ((firstNum.getText().toString().isEmpty()) || (secondNum.getText().toString().isEmpty())){
+            Toast.makeText(getApplicationContext(),"Please Enter Numbers first",Toast.LENGTH_LONG).show();
 
+        }else {
+            int num1 = Integer.parseInt(num1Str);
+            int num2 = Integer.parseInt(num2Str);
+
+            if (op == 1) {
+                resultText.setText(String.valueOf(num1 + num2));
+            } else if (op == 2) {
+                resultText.setText(String.valueOf(num1 - num2));
+
+            } else if (op == 3) {
+                resultText.setText(String.valueOf(num1 * num2));
+
+            } else if (op == 4) {
+                resultText.setText(String.valueOf(num1 / num2));
+
+            }
+        }
+    }
 
 
 }// MVC
